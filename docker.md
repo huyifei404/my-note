@@ -81,5 +81,17 @@ ps -ef|grep java
 502  docker logs -f -t --tail 500 app
 ```
 
+```bash
+docker run -d --restart=always -p 9200:9200 -p 9300:9300 \
+-e "discovery.type=single-node" \
+-v /huyifei/elk/elasticSearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml \
+--name elasticsearch docker.elastic.co/elasticsearch/elasticsearch:6.3.1
+
+```
+
+```txt
+curl -H "Content-Type: application/json" -X POST "192.168.14.130:9200/aoc-log*/product/_bulk?refresh" --data-binary "@5.json"
+```
+
 
 

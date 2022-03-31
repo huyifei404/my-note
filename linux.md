@@ -59,7 +59,7 @@ firewall-cmd --state
 #3、开启、重启、关闭firewall
 	service firewalld start
 	service firewalld restart
-	service firewalld stop
+	service firewalld stopdo
 #4、查看防火墙规则
 firewall-cmd --list-all
 #5、查询、开放、关闭端口
